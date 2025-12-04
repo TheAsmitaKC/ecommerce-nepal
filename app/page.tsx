@@ -14,12 +14,14 @@ import Bag from "../components/images/Bag.png";
 import AddtoCart from "../components/images/Add To Cart.png";
 function page() {
   return (
-    <div className="grid grid-cols-5 p-0 m-0">
+    <div className="grid grid-cols-5 ">
       <PopularProducts
+        badge="Sale 50%"
         productimg={<Image src={Apple} alt="apple" />}
         heading="Green Apple"
         price="14.99"
-        rating="⭐⭐⭐⭐⭐"
+        linethrough="20.99"
+        rating="⭐⭐⭐⭐"
         addtocart={<Image src={Bag} alt="bag" />}
       />
       <PopularProducts
@@ -29,13 +31,16 @@ function page() {
         rating="⭐⭐⭐⭐"
         addtocart={<Image src={Bag} alt="bag" />}
       />
-      <PopularProducts
-        productimg={<Image src={Third} alt="third" />}
-        heading="Chinese Cabbage "
-        price="12.00"
-        rating="⭐⭐⭐⭐"
-        addtocart={<Image src={AddtoCart} alt="bag" />}
-      />
+      <div className="border-[#2C742F] border shadow-[0px_0px_12px_0px_#20B52652]">
+        <PopularProducts
+          productimg={<Image src={Third} alt="third" />}
+          heading="Chinese Cabbage "
+          price="12.00"
+          rating="⭐⭐⭐⭐☆"
+          addtocart={<Image src={AddtoCart} alt="bag" />}
+          isGreen={true}
+        />
+      </div>
       <PopularProducts
         productimg={<Image src={Fourth} alt="fourth" />}
         heading="Green Lettuce"
