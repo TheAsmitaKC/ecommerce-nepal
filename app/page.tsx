@@ -1,65 +1,92 @@
+import PopularProducts from "@/components/PopularProducts";
 import Image from "next/image";
-
-export default function Home() {
+import Apple from "../components/images/apple.png";
+import Orange from "../components/images/orange.png";
+import Third from "../components/images/third.png";
+import Fourth from "../components/images/fourth.png";
+import Fifth from "../components/images/fifth.png";
+import Sixth from "../components/images/sixth.png";
+import Seventh from "../components/images/seventh.png";
+import Eighth from "../components/images/eigth.png";
+import Nineth from "../components/images/nineth.png";
+import Tenth from "../components/images/tenth.png";
+import Bag from "../components/images/Bag.png";
+import AddtoCart from "../components/images/Add To Cart.png";
+function page() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div className="grid grid-cols-5 p-0 m-0">
+      <PopularProducts
+        productimg={<Image src={Apple} alt="apple" />}
+        heading="Green Apple"
+        price="14.99"
+        rating="⭐⭐⭐⭐⭐"
+        addtocart={<Image src={Bag} alt="bag" />}
+      />
+      <PopularProducts
+        productimg={<Image src={Orange} alt="orange" />}
+        heading="Fresh Indian Maita"
+        price="20.00"
+        rating="⭐⭐⭐⭐"
+        addtocart={<Image src={Bag} alt="bag" />}
+      />
+      <PopularProducts
+        productimg={<Image src={Third} alt="third" />}
+        heading="Chinese Cabbage "
+        price="12.00"
+        rating="⭐⭐⭐⭐"
+        addtocart={<Image src={AddtoCart} alt="bag" />}
+      />
+      <PopularProducts
+        productimg={<Image src={Fourth} alt="fourth" />}
+        heading="Green Lettuce"
+        price="9.00"
+        rating="⭐⭐⭐⭐"
+        addtocart={<Image src={Bag} alt="bag" />}
+      />
+      <PopularProducts
+        productimg={<Image src={Fifth} alt="fifth" />}
+        heading="Eggplant"
+        price="34.00"
+        rating="⭐⭐⭐⭐"
+        addtocart={<Image src={Bag} alt="bag" />}
+      />
+      <PopularProducts
+        productimg={<Image src={Sixth} alt="sixth" />}
+        heading="Big Potatoes"
+        price="20"
+        rating="⭐⭐⭐⭐⭐"
+        addtocart={<Image src={Bag} alt="bag" />}
+      />
+      <PopularProducts
+        productimg={<Image src={Seventh} alt="seventh" />}
+        heading="Corn"
+        price="20.00"
+        rating="⭐⭐⭐⭐"
+        addtocart={<Image src={Bag} alt="bag" />}
+      />
+      <PopularProducts
+        productimg={<Image src={Eighth} alt="eigth" />}
+        heading="Fresh Cauliflower "
+        price="20.00"
+        rating="⭐⭐⭐⭐"
+        addtocart={<Image src={Bag} alt="bag" />}
+      />
+      <PopularProducts
+        productimg={<Image src={Nineth} alt="nineth" />}
+        heading="Green Capsicum"
+        price="9.00"
+        rating="⭐⭐⭐⭐"
+        addtocart={<Image src={Bag} alt="bag" />}
+      />
+      <PopularProducts
+        productimg={<Image src={Tenth} alt="tenth" />}
+        heading="Green Chilly"
+        price="34.00"
+        rating="⭐⭐⭐⭐"
+        addtocart={<Image src={Bag} alt="bag" />}
+      />
     </div>
   );
 }
+
+export default page;
