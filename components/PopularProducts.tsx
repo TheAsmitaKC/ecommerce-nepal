@@ -20,13 +20,13 @@ function PopularProducts({
   isGreen,
 }: PopularProductProps) {
   return (
-    <div className="border-[#E6E6E6] border w-full relative">
+    <div className=" border-[#E6E6E6] border w-full relative h-full ">
       {badge && (
         <div className=" absolute bg-[#EA4B48] w-21 text-white ml-5 mt-4 rounded-sm  h-[27px] py-[3px] px-2">
           {badge}
         </div>
       )}
-      <div className="w-full h-60  flex items-center justify-center">
+      <div className=" flex items-center justify-center">
         {productimg}
       </div>
 
