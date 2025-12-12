@@ -21,6 +21,7 @@ import LatestNewsImg2 from "../components/images/latestnews2.png";
 import LatestNewsImg3 from "../components/images/latestnews3.png";
 
 import LatestNews from "@/components/LatestNews";
+import SubscribeNewsLetter from "@/components/SubscribeNewsLetter";
 function page() {
   return (
     <div>
@@ -162,6 +163,7 @@ function page() {
           month="Nov"
         />
       </div>
+       <SubscribeNewsLetter/>
     </div>
   );
 }
