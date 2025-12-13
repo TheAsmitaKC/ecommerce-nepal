@@ -22,6 +22,20 @@ import LatestNewsImg3 from "../components/images/latestnews3.png";
 
 import LatestNews from "@/components/LatestNews";
 import SubscribeNewsLetter from "@/components/SubscribeNewsLetter";
+import ShopByTopCategories from "@/components/ShopByTopCategories";
+import top1 from "../components/images/top1.png"
+import top2 from "../components/images/top2.png"
+import top3 from "../components/images/top3.png"
+import top4 from "../components/images/top4.png"
+import top5 from "../components/images/top5.png"
+import top6 from "../components/images/top6.png"
+import top7 from "../components/images/top7.png"
+import top8 from "../components/images/top8.png"
+import top9 from "../components/images/top9.png"
+import top10 from "../components/images/top10.png"
+import top11 from "../components/images/top11.png"
+import top12 from "../components/images/top12.png"
+
 function page() {
   return (
     <div>
@@ -163,7 +177,47 @@ function page() {
           month="Nov"
         />
       </div>
-       <SubscribeNewsLetter/>
+        <div className="grid grid-cols-2  gap-4 items-center pl-5 lg:grid-cols-6 md:grid-cols-4">
+        <ShopByTopCategories image={
+           <Image src={top1} alt=""/>}
+           title="Fresh Fruit"
+        />
+        <ShopByTopCategories image={
+           <Image src={top2} alt=""/>}
+           title="Fresh Vegetables"
+        /><ShopByTopCategories image={
+           <Image src={top3} alt=""/>}
+           title="Meat & Fish"
+        /><ShopByTopCategories image={
+           <Image src={top4} alt=""/>}
+           title="Snacks"
+        /><ShopByTopCategories image={
+           <Image src={top5} alt=""/>}
+           title="Beverages"
+        /><ShopByTopCategories image={
+           <Image src={top6} alt=""/>}
+           title="Beauty & Health"
+        /><ShopByTopCategories image={
+           <Image src={top7} alt=""/>}
+           title="Bread & Bakeries"
+        /><ShopByTopCategories image={
+           <Image src={top8} alt=""/>}
+           title="Baking Needs"
+        /><ShopByTopCategories image={
+           <Image src={top9} alt=""/>}
+           title="Cooking"
+        /><ShopByTopCategories image={
+           <Image src={top10} alt=""/>}
+           title="Diabetic Food"
+        /><ShopByTopCategories image={
+           <Image src={top11} alt=""/>}
+           title="Dish Detergents"
+        /><ShopByTopCategories image={
+           <Image src={top12} alt=""/>}
+           title="Oil"
+        />
+       </div>
+      <div className="w-full p-2">  <SubscribeNewsLetter/></div>
     </div>
   );
 }
