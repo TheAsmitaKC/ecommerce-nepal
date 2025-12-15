@@ -1,30 +1,32 @@
-"use client"
+"use client";
+import CustomerFeedback from "@/components/CustomerFeedback";
 import PopularProducts from "@/components/PopularProducts";
 import Image from "next/image";
-import Apple from "../components/images/apple.png";
-import Orange from "../components/images/orange.png";
-import Third from "../components/images/third.png";
-import Fourth from "../components/images/fourth.png";
-import Fifth from "../components/images/fifth.png";
-import Sixth from "../components/images/sixth.png";
-import Seventh from "../components/images/seventh.png";
-import Eighth from "../components/images/eigth.png";
-import Nineth from "../components/images/nineth.png";
-import Tenth from "../components/images/tenth.png";
-import Bag from "../components/images/Bag.png";
 import AddtoCart from "../components/images/Add To Cart.png";
-import CustomerFeedback from "@/components/CustomerFeedback";
-import profile1 from "../components/images/profil1.png";
-import profile2 from "../components/images/profile2.png";
-import profile3 from "../components/images/profile3.png";
+import Apple from "../components/images/apple.png";
+import Bag from "../components/images/Bag.png";
+import Eighth from "../components/images/eigth.png";
+import Fifth from "../components/images/fifth.png";
+import Fourth from "../components/images/fourth.png";
 import LatestNewsImg1 from "../components/images/latestnews1.png";
 import LatestNewsImg2 from "../components/images/latestnews2.png";
 import LatestNewsImg3 from "../components/images/latestnews3.png";
+import Nineth from "../components/images/nineth.png";
+import Orange from "../components/images/orange.png";
 
+import Seventh from "../components/images/seventh.png";
+import Sixth from "../components/images/sixth.png";
+import Tenth from "../components/images/tenth.png";
+import Third from "../components/images/third.png";
+
+import BestSellerProducts from "@/components/BestSellerProducts";
 import LatestNews from "@/components/LatestNews";
-import SubscribeNewsLetter from "@/components/SubscribeNewsLetter";
 import ShopByTopCategories from "@/components/ShopByTopCategories";
+import SubscribeNewsLetter from "@/components/SubscribeNewsLetter";
 import top1 from "../components/images/top1.png";
+import top10 from "../components/images/top10.png";
+import top11 from "../components/images/top11.png";
+import top12 from "../components/images/top12.png";
 import top2 from "../components/images/top2.png";
 import top3 from "../components/images/top3.png";
 import top4 from "../components/images/top4.png";
@@ -33,16 +35,12 @@ import top6 from "../components/images/top6.png";
 import top7 from "../components/images/top7.png";
 import top8 from "../components/images/top8.png";
 import top9 from "../components/images/top9.png";
-import top10 from "../components/images/top10.png";
-import top11 from "../components/images/top11.png";
-import top12 from "../components/images/top12.png";
-import BestSellerProducts from "@/components/BestSellerProducts";
-import { use } from "react";
+import Testinomials from "@/components/layouts/Testinomials";
 
 function page() {
   return (
     <div>
-      <div className="w-full grid   md:grid-cols-2 lg:grid-cols-5 ">
+      <div className="grid w-full md:grid-cols-2 lg:grid-cols-5">
         <PopularProducts
           badge="Sale 50%"
           productimg={<Image src={Apple} alt="apple" />}
@@ -119,30 +117,9 @@ function page() {
           addtocart={<Image src={Bag} alt="bag" />}
         />
       </div>
-      <div>
-        <div className="mt-[70px] p-6 text-[30px] font-semibold">
-          <p className="text-[16px] text-[#00B207] uppercase">Testimonals</p>
-          <h1>What Our Customer Says</h1>
-        </div>
-        <div className="bg-[#F2F5F3] w-full grid gap-2 grid-cols-1 lg:grid-cols-3 sm:grid-cols-2">
-          <CustomerFeedback
-            desc="Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget"
-            profileimg={<Image src={profile1} alt="profile" />}
-            name="Robert Fox"
-          />
-          <CustomerFeedback
-            desc="Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget"
-            profileimg={<Image src={profile2} alt="profile" />}
-            name="Dianne Russell"
-          />
-          <CustomerFeedback
-            desc="Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget"
-            profileimg={<Image src={profile3} alt="profile" />}
-            name="Eleanor Pena"
-          />
-        </div>
-      </div>
-      <div className="w-full grid   md:grid-cols-2 lg:grid-cols-3">
+
+      <Testinomials />
+      <div className="grid w-full md:grid-cols-2 lg:grid-cols-3">
         <LatestNews
           mainImage={
             <Image
@@ -180,7 +157,7 @@ function page() {
           month="Nov"
         />
       </div>
-      <div className="grid grid-cols-2  gap-4 items-center pl-5 lg:grid-cols-6 md:grid-cols-4">
+      <div className="grid grid-cols-2 gap-4 items-center pl-5 lg:grid-cols-6 md:grid-cols-4">
         <ShopByTopCategories
           image={<Image src={top1} alt="" />}
           title="Fresh Fruit"
@@ -227,10 +204,10 @@ function page() {
         />
         <ShopByTopCategories image={<Image src={top12} alt="" />} title="Oil" />
       </div>
-      <div className="w-full p-2">
+      <div className="p-2 w-full">
         <SubscribeNewsLetter />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-5 p-3 items-center gap-3 ">
+      <div className="grid grid-cols-1 gap-3 items-center p-3 lg:grid-cols-5">
         <BestSellerProducts
           productimg={<Image src={Apple} alt="apple" />}
           heading="Green Apple"

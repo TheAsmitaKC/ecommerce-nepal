@@ -7,17 +7,17 @@ type feedbackProps = {
 };
 function CustomerFeedback({ desc, profileimg, name }: feedbackProps) {
   return (
-    <div className="flex flex-col w-full p-6 gap-4 rounded-lg bg-white">
+    <div className="flex flex-col gap-4 p-6 w-full bg-white">
       <div>
-        <Image className="w-8 h-[26px]" src={testimonals} alt="testimonal " />
+        <Image src={testimonals} alt="testimonal" width={32} height={26} />
       </div>
-      <div className="text-[14px] font-semibold  ">{desc}</div>
-      <div className="flex ">
-        <div className="w-14 h-14  ">{profileimg}</div>
-        <div className="justify-between flex w-full">
+      <div className="text-[14px]">{desc}</div>
+      <div className="flex">
+        <div className="size-14">{profileimg}</div>
+        <div className="flex justify-between w-full">
           <div className="flex flex-col ml-2">
-            <div>{name}</div>
-            <div>Customer</div>
+            <div className="font-medium">{name}</div>
+            <div className="text-[#999999]">Customer</div>
           </div>
           <div className="mt-2">⭐⭐⭐⭐⭐</div>
         </div>
