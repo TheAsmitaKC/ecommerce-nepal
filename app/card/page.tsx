@@ -1,5 +1,5 @@
 import { Star } from "lucide-react";
-import React from "react";
+import Image from "next/image";
 
 const page = () => {
   return (
@@ -11,6 +11,7 @@ const page = () => {
         handleAddToCart={() => {}}
         sale="10% off"
         oldPrice={120}
+        image="https://placehold.co/400"
       />
     </div>
   );
@@ -25,6 +26,7 @@ interface ProductCardProps {
   rating: number;
   handleAddToCart: () => void;
   sale?: string;
+  image: string;
 }
 
 const ProductCard = ({
@@ -34,12 +36,23 @@ const ProductCard = ({
   rating,
   handleAddToCart,
   sale,
+  image,
 }: ProductCardProps) => {
   const intRating = Math.ceil(rating) || 0;
   return (
     <article>
       <div>
-        Image
+        <div className="size-40">
+          {" "}
+          <Image
+            unoptimized
+            src={image}
+            alt={title}
+            width={100}
+            height={100}
+            className="object-cover w-full h-full"
+          />
+        </div>
         {sale && (
           <div className="px-1 py-2 text-white bg-red-900 w-fit">{sale}</div>
         )}
