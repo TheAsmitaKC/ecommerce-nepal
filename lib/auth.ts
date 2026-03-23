@@ -12,7 +12,14 @@ export interface User {
 }
 
 // In-memory store — replace with a database later
-const users: User[] = [];
+const users: User[] = [
+  {
+    id: "admin-001",
+    email: "admin@gmail.com",
+    name: "Admin",
+    password: "$2b$10$SCgNqyof.gnNCOT75wuXfe4a8FoWsDOxxcmE73U9vBKy7i8shDaVa", // admin
+  },
+];
 
 export async function findUserByEmail(email: string): Promise<User | undefined> {
   return users.find((u) => u.email === email);
