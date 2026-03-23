@@ -5,6 +5,7 @@ import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
 import { cn } from "@/lib/utils";
 import QueryProvider from "@/lib/query-provider";
+import AuthGuard from "@/components/auth/AuthGuard";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -28,9 +29,11 @@ export default function RootLayout({
     <html lang="en" className={cn("font-sans", geist.variable)}>
       <body className={`${poppins.className} antialiased`}>
         <QueryProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
+          <AuthGuard>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </AuthGuard>
         </QueryProvider>
       </body>
     </html>
