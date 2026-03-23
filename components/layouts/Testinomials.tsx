@@ -1,43 +1,38 @@
-import React from "react";
-import CustomerFeedback from "../CustomerFeedback";
 import Image from "next/image";
+import CustomerFeedback from "@/components/CustomerFeedback";
+import Section from "@/components/Section";
 import profile1 from "@/components/images/profil1.png";
 import profile2 from "@/components/images/profile2.png";
 import profile3 from "@/components/images/profile3.png";
 
-const Testinomials = () => {
-  return (
-    <div className="section_spacing bg-[#f2f2f2]">
-      <div className="flex flex-col gap-9 justify-center items-center wrapper">
-        {/* text area */}
-        <div>
-          <p className="text-[16px] text-[#00B207] uppercase text-center">
-            Testimonals
-          </p>
-          <h1 className="text-center">What Our Customer Says</h1>
-        </div>
+const feedbacks = [
+  { image: profile1, name: "Robert Fox" },
+  { image: profile2, name: "Dianne Russell" },
+  { image: profile3, name: "Eleanor Pena" },
+];
 
-        {/* content area */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+const feedbackDesc =
+  "Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget";
+
+function Testinomials() {
+  return (
+    <Section
+      label="Testimonials"
+      title="What Our Customer Says"
+      bgColor="bg-[#f2f2f2]"
+    >
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {feedbacks.map((feedback) => (
           <CustomerFeedback
-            desc="Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget"
-            profileimg={<Image src={profile1} alt="profile" />}
-            name="Robert Fox"
+            key={feedback.name}
+            desc={feedbackDesc}
+            profileimg={<Image src={feedback.image} alt="profile" />}
+            name={feedback.name}
           />
-          <CustomerFeedback
-            desc="Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget"
-            profileimg={<Image src={profile2} alt="profile" />}
-            name="Dianne Russell"
-          />
-          <CustomerFeedback
-            desc="Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget"
-            profileimg={<Image src={profile3} alt="profile" />}
-            name="Eleanor Pena"
-          />
-        </div>
+        ))}
       </div>
-    </div>
+    </Section>
   );
-};
+}
 
 export default Testinomials;
