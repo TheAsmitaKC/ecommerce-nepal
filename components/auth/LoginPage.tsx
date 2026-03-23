@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { useLogin } from "@/hooks/use-login";
-import { useAuth } from "@/hooks/use-auth";
 import { useRouter } from "next/navigation";
 
 const loginSchema = z.object({
@@ -31,16 +30,7 @@ const loginSchema = z.object({
 
 export default function LoginPage() {
   const router = useRouter();
-  const { user, isLoading: authLoading } = useAuth();
   const { mutate: handleLogin, isPending, error, isError } = useLogin();
-
-  React.useEffect(() => {
-    if (!authLoading && user) {
-      router.replace("/");
-    }
-  }, [user, authLoading, router]);
-
-  if (authLoading || user) return null;
 
   const form = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
@@ -64,6 +54,11 @@ export default function LoginPage() {
       <Card className="w-full sm:max-w-md">
         <CardContent>
           <h2 className="text-[24px] font-semibold text-center mb-6">Login</h2>
+          {isError && (
+            <p className="text-sm text-red-500 text-center mb-4">
+              {error?.message || "Login failed"}
+            </p>
+          )}
           <form id="login-form" onSubmit={form.handleSubmit(onSubmit)}>
             <FieldGroup>
               <Controller
@@ -110,8 +105,8 @@ export default function LoginPage() {
           </form>
         </CardContent>
         <CardFooter>
-          <Button type="submit" form="login-form" className="w-full">
-            Login
+          <Button type="submit" form="login-form" className="w-full" disabled={isPending}>
+            {isPending ? "Logging in..." : "Login"}
           </Button>
         </CardFooter>
       </Card>

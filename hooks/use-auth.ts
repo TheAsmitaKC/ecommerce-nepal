@@ -8,11 +8,12 @@ async function fetchMe() {
 }
 
 export function useAuth() {
-  const { data: user, isLoading, refetch } = useQuery({
+  const { data: user, isLoading, isFetching, refetch } = useQuery({
     queryKey: ["auth", "me"],
     queryFn: fetchMe,
     retry: false,
   });
 
-  return { user: user ?? null, isLoading, refetch };
+  // Treat initial load OR background refetch with no cached user as loading
+  return { user: user ?? null, isLoading: isLoading || (isFetching && !user), refetch };
 }

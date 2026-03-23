@@ -20,8 +20,12 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
     }
   }, [user, isLoading, isPublic, router]);
 
+  // Always render public pages immediately
+  if (isPublic) return <>{children}</>;
+
+  // Protected pages: wait for auth check
   if (isLoading) return null;
-  if (!user && !isPublic) return null;
+  if (!user) return null;
 
   return <>{children}</>;
 }

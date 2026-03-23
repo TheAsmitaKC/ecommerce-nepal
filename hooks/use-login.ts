@@ -27,8 +27,9 @@ export function useLogin() {
   return useMutation({
     mutationKey: ["login"],
     mutationFn: postLogin,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["auth", "me"] });
+    onSuccess: (data) => {
+      // Set auth data immediately so AuthGuard sees the user right away
+      queryClient.setQueryData(["auth", "me"], data.user);
     },
   });
 }
